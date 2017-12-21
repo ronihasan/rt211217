@@ -1,0 +1,94 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "cordova-plugin-wakeuptimer-jk",
+        "scope": null,
+        "escapedName": "cordova-plugin-wakeuptimer-jk",
+        "name": "cordova-plugin-wakeuptimer-jk",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "D:\\MOBROOT\\rt211217"
+    ]
+  ],
+  "_from": "cordova-plugin-wakeuptimer-jk@latest",
+  "_id": "cordova-plugin-wakeuptimer-jk@1.1.5",
+  "_inCache": true,
+  "_location": "/cordova-plugin-wakeuptimer-jk",
+  "_nodeVersion": "7.2.0",
+  "_npmOperationalInternal": {
+    "host": "packages-18-east.internal.npmjs.com",
+    "tmp": "tmp/cordova-plugin-wakeuptimer-jk-1.1.5.tgz_1488359606755_0.1182878555264324"
+  },
+  "_npmUser": {
+    "name": "jkhax0r",
+    "email": "jonathan@wirelessbites.com"
+  },
+  "_npmVersion": "4.0.2",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "cordova-plugin-wakeuptimer-jk",
+    "scope": null,
+    "escapedName": "cordova-plugin-wakeuptimer-jk",
+    "name": "cordova-plugin-wakeuptimer-jk",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/cordova-plugin-wakeuptimer-jk/-/cordova-plugin-wakeuptimer-jk-1.1.5.tgz",
+  "_shasum": "7a8737cc092212e3f74f2db42ca2885892c3beb9",
+  "_shrinkwrap": null,
+  "_spec": "cordova-plugin-wakeuptimer-jk",
+  "_where": "D:\\MOBROOT\\rt211217",
+  "author": {
+    "name": "jkhax0r"
+  },
+  "bugs": {
+    "url": "https://github.com/jkhax0r/cordova-plugin-wakeuptimer/issues"
+  },
+  "cordova": {
+    "id": "cordova-plugin-wakeuptimer-jk",
+    "platforms": [
+      "android"
+    ]
+  },
+  "dependencies": {},
+  "description": "Wakeup Plugin",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "7a8737cc092212e3f74f2db42ca2885892c3beb9",
+    "tarball": "https://registry.npmjs.org/cordova-plugin-wakeuptimer-jk/-/cordova-plugin-wakeuptimer-jk-1.1.5.tgz"
+  },
+  "gitHead": "195c80309af29b76b93ba05de03029d16e845d2e",
+  "homepage": "https://github.com/jkhax0r/cordova-plugin-wakeuptimer#readme",
+  "keywords": [
+    "sleep",
+    "wakeup",
+    "timer",
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "license": "Apache 2.0",
+  "maintainers": [
+    {
+      "name": "jkhax0r",
+      "email": "jonathan@wirelessbites.com"
+    }
+  ],
+  "name": "cordova-plugin-wakeuptimer-jk",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jkhax0r/cordova-plugin-wakeuptimer.git"
+  },
+  "scripts": {},
+  "version": "1.1.5"
+}
