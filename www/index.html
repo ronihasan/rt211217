@@ -57,7 +57,7 @@
 
             $(document).on("deviceready", function () {
                 // all responses from the audio player are channeled through successCallback and errorCallback
-
+                
 
             });
 
@@ -138,10 +138,13 @@
                                             var successCallback = function (result) {
                                                 if (result.type === 'wakeup') {
                                                     console.log('wakeup alarm detected--' + result.extra);
+                                                    $('.received').html('wakeup alarm detected--' + result.extra);
                                                 } else if (result.type === 'set') {
                                                     console.log('wakeup alarm set--' + result);
+                                                    $('.received').html('wakeup alarm set--' + result);
                                                 } else {
                                                     console.log('wakeup unhandled type (' + result.type + ')');
+                                                    $('.received').html('wakeup unhandled type (' + result.type + ')');
                                                 }
                                             };
         </script>
