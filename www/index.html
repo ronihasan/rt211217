@@ -68,12 +68,14 @@
                             {
                                 alarms: [{
                                         type: 'onetime',
-                                        time: {hour: 12, minute: 30},
+                                        time: {hour: 12, minute: 35},
                                         extra: {message: 'json containing app-specific information to be posted when alarm triggers'},
                                         message: 'Alarm has expired!'
                                     }]
                             }
                     );
+            
+            
  
                     // set repeating wakeup timer
                     window.wakeuptimer.wakeup(successCallback,
