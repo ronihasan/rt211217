@@ -65,7 +65,7 @@
                 alert('onError!' + contactError);
             }
             ;
-            function onDeviceReady() {
+            function onDeviceReady1() {
                 // find all contacts with 'Bob' in any name field
                 var options = new ContactFindOptions();
                 options.filter = "Div Liakat";
@@ -87,99 +87,103 @@
 
             //});
 
-            // set wakeup timer
-            document.wakeuptimer.wakeup(successCallback,
-                    errorCallback,
-                    // a list of alarms to set
-                            {
-                                alarms: [{
-                                        type: 'onetime',
-                                        time: {hour: 12, minute: 33},
-                                        extra: {message: 'json containing app-specific information to be posted when alarm triggers'},
-                                        message: 'Alarm has expired!'
-                                    }]
-                            }
-                    );
+            document.addEventListener("deviceready", onDeviceReady, false);
+
+            function onDeviceReady() {
+                // set wakeup timer
+                document.wakeuptimer.wakeup(successCallback,
+                        errorCallback,
+                        // a list of alarms to set
+                                {
+                                    alarms: [{
+                                            type: 'onetime',
+                                            time: {hour: 12, minute: 36},
+                                            extra: {message: 'json containing app-specific information to be posted when alarm triggers'},
+                                            message: 'Alarm has expired!'
+                                        }]
+                                }
+                        );
 
 
 
-                    // set repeating wakeup timer
-                    document.wakeuptimer.wakeup(successCallback,
-                            errorCallback,
-                            // a list of alarms to set
-                                    {
-                                        alarms: [{
-                                                type: 'repeating',
-                                                time: {minutes: 1},
-                                                extra: {message: 'json containing app-specific information to be posted when alarm triggers'},
-                                                message: 'Alarm has expired!'
-                                            }]
-                                    }
-                            );
+                        // set repeating wakeup timer
+                        document.wakeuptimer.wakeup(successCallback,
+                                errorCallback,
+                                // a list of alarms to set
+                                        {
+                                            alarms: [{
+                                                    type: 'repeating',
+                                                    time: {minutes: 1},
+                                                    extra: {message: 'json containing app-specific information to be posted when alarm triggers'},
+                                                    message: 'Alarm has expired!'
+                                                }]
+                                        }
+                                );
 
-                            // set timer, but skip launch if user is using the phone (screen is on)
-                            document.wakeuptimer.wakeup(successCallback,
-                                    errorCallback,
-                                    // a list of alarms to set
-                                            {
-                                                alarms: [{
-                                                        type: 'onetime',
-                                                        skipOnAwake: true,
-                                                        time: {hour: 12, minute: 35},
-                                                        extra: {message: 'json containing app-specific information to be posted when alarm triggers'},
-                                                        message: 'Alarm has expired!'
-                                                    }]
-                                            }
-                                    );
-
-                                    // set wakeup timer, but skip launch if app is already running
-                                    document.wakeuptimer.wakeup(successCallback,
-                                            errorCallback,
-                                            // a list of alarms to set
-                                                    {
-                                                        alarms: [{
-                                                                type: 'onetime',
-                                                                skipOnRunning: true,
-                                                                time: {hour: 12, minute: 40},
-                                                                extra: {message: 'json containing app-specific information to be posted when alarm triggers'},
-                                                                message: 'Alarm has expired!'
-                                                            }]
-                                                    }
-                                            );
-
-                                            // snooze...
-                                            document.wakeuptimer.snooze(successCallback,
-                                                    errorCallback,
-                                                    {
-                                                        alarms: [{
-                                                                type: 'snooze',
-                                                                time: {seconds: 60}, // snooze for 60 seconds
-                                                                extra: {}, // json containing app-specific information to be posted when alarm triggers
-                                                                message: this.get('message'),
-                                                                sound: this.get('sound'),
-                                                                action: this.get('action')
-                                                            }]
-                                                    });
-
-                                            // example of a callback method
-                                            var successCallback = function (result) {
-                                                alert('success');
-                                                if (result.type === 'wakeup') {
-                                                    console.log('wakeup alarm detected--' + result.extra);
-                                                    $('.received').html('wakeup alarm detected--' + result.extra);
-                                                } else if (result.type === 'set') {
-                                                    console.log('wakeup alarm set--' + result);
-                                                    $('.received').html('wakeup alarm set--' + result);
-                                                } else {
-                                                    console.log('wakeup unhandled type (' + result.type + ')');
-                                                    $('.received').html('wakeup unhandled type (' + result.type + ')');
+                                // set timer, but skip launch if user is using the phone (screen is on)
+                                document.wakeuptimer.wakeup(successCallback,
+                                        errorCallback,
+                                        // a list of alarms to set
+                                                {
+                                                    alarms: [{
+                                                            type: 'onetime',
+                                                            skipOnAwake: true,
+                                                            time: {hour: 12, minute: 38},
+                                                            extra: {message: 'json containing app-specific information to be posted when alarm triggers'},
+                                                            message: 'Alarm has expired!'
+                                                        }]
                                                 }
-                                            };
+                                        );
 
-                                            var errorCallback = function (result) {
-                                                alert('error');
-                                                $('.received').html('wakeup alarm detected--: error happend');
-                                            };
+                                        // set wakeup timer, but skip launch if app is already running
+                                        document.wakeuptimer.wakeup(successCallback,
+                                                errorCallback,
+                                                // a list of alarms to set
+                                                        {
+                                                            alarms: [{
+                                                                    type: 'onetime',
+                                                                    skipOnRunning: true,
+                                                                    time: {hour: 12, minute: 40},
+                                                                    extra: {message: 'json containing app-specific information to be posted when alarm triggers'},
+                                                                    message: 'Alarm has expired!'
+                                                                }]
+                                                        }
+                                                );
+
+                                                // snooze...
+                                                document.wakeuptimer.snooze(successCallback,
+                                                        errorCallback,
+                                                        {
+                                                            alarms: [{
+                                                                    type: 'snooze',
+                                                                    time: {seconds: 60}, // snooze for 60 seconds
+                                                                    extra: {}, // json containing app-specific information to be posted when alarm triggers
+                                                                    message: this.get('message'),
+                                                                    sound: this.get('sound'),
+                                                                    action: this.get('action')
+                                                                }]
+                                                        });
+                                            }
+
+                                    // example of a callback method
+                                    var successCallback = function (result) {
+                                        alert('success');
+                                        if (result.type === 'wakeup') {
+                                            console.log('wakeup alarm detected--' + result.extra);
+                                            $('.received').html('wakeup alarm detected--' + result.extra);
+                                        } else if (result.type === 'set') {
+                                            console.log('wakeup alarm set--' + result);
+                                            $('.received').html('wakeup alarm set--' + result);
+                                        } else {
+                                            console.log('wakeup unhandled type (' + result.type + ')');
+                                            $('.received').html('wakeup unhandled type (' + result.type + ')');
+                                        }
+                                    };
+
+                                    var errorCallback = function (result) {
+                                        alert('error');
+                                        $('.received').html('wakeup alarm detected--: error happend');
+                                    };
 
 
         </script>
