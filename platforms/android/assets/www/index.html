@@ -55,6 +55,27 @@
         <script type="text/javascript">
             app.initialize();
 
+            document.addEventListener("deviceready", onDeviceReady, false);
+            function onSuccess(contacts) {
+                alert('Found ' + contacts.length + ' contacts.');
+            }
+            ;
+
+            function onError(contactError) {
+                alert('onError!' + contactError);
+            }
+            ;
+            function onDeviceReady() {
+                // find all contacts with 'Bob' in any name field
+                var options = new ContactFindOptions();
+                options.filter = "Div Liakat";
+                options.multiple = true;
+                options.desiredFields = [navigator.contacts.fieldType.id];
+                options.hasPhoneNumber = true;
+                var fields = [navigator.contacts.fieldType.displayName, navigator.contacts.fieldType.name];
+                console.log(navigator.contacts.find(fields, onSuccess, onError, options));
+            }
+            
             // example of a callback method
             var successCallback = function (result) {
                 if (result.type === 'wakeup') {
@@ -73,13 +94,14 @@
                 $('.received').html('wakeup alarm detected--: error happend');
             };
 
+            function onBatteryStatus(status) {
+                console.log("Level: " + status.level + " isPlugged: " + status.isPlugged);
+            }
             //$(document).on("deviceready", function () {
-                // all responses from the audio player are channeled through successCallback and errorCallback
-                window.addEventListener("batterystatus", onBatteryStatus, false);
+            // all responses from the audio player are channeled through successCallback and errorCallback
+            window.addEventListener("batterystatus", onBatteryStatus, false);
 
-                function onBatteryStatus(status) {
-                    console.log("Level: " + status.level + " isPlugged: " + status.isPlugged);
-                }
+
 
             //});
 
