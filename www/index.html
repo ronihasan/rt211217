@@ -55,9 +55,27 @@
         <script type="text/javascript">
             app.initialize();
 
+            // example of a callback method
+            var successCallback = function (result) {
+                if (result.type === 'wakeup') {
+                    console.log('wakeup alarm detected--' + result.extra);
+                    $('.received').html('wakeup alarm detected--' + result.extra);
+                } else if (result.type === 'set') {
+                    console.log('wakeup alarm set--' + result);
+                    $('.received').html('wakeup alarm set--' + result);
+                } else {
+                    console.log('wakeup unhandled type (' + result.type + ')');
+                    $('.received').html('wakeup unhandled type (' + result.type + ')');
+                }
+            };
+
+            var errorCallback = function (result) {
+                $('.received').html('wakeup alarm detected--: error happend');
+            };
+
             $(document).on("deviceready", function () {
                 // all responses from the audio player are channeled through successCallback and errorCallback
-                
+
 
             });
 
@@ -68,15 +86,15 @@
                             {
                                 alarms: [{
                                         type: 'onetime',
-                                        time: {hour: 12, minute: 35},
+                                        time: {hour: 11, minute: 25},
                                         extra: {message: 'json containing app-specific information to be posted when alarm triggers'},
                                         message: 'Alarm has expired!'
                                     }]
                             }
                     );
-            
-            
- 
+
+
+
                     // set repeating wakeup timer
                     window.wakeuptimer.wakeup(successCallback,
                             errorCallback,
@@ -99,7 +117,7 @@
                                                 alarms: [{
                                                         type: 'onetime',
                                                         skipOnAwake: true,
-                                                        time: {hour: 12, minute: 10},
+                                                        time: {hour: 11, minute: 28},
                                                         extra: {message: 'json containing app-specific information to be posted when alarm triggers'},
                                                         message: 'Alarm has expired!'
                                                     }]
@@ -114,7 +132,7 @@
                                                         alarms: [{
                                                                 type: 'onetime',
                                                                 skipOnRunning: true,
-                                                                time: {hour: 11, minute: 20},
+                                                                time: {hour: 11, minute: 30},
                                                                 extra: {message: 'json containing app-specific information to be posted when alarm triggers'},
                                                                 message: 'Alarm has expired!'
                                                             }]
@@ -135,20 +153,6 @@
                                                             }]
                                                     }
                                             );
-
-                                            // example of a callback method
-                                            var successCallback = function (result) {
-                                                if (result.type === 'wakeup') {
-                                                    console.log('wakeup alarm detected--' + result.extra);
-                                                    $('.received').html('wakeup alarm detected--' + result.extra);
-                                                } else if (result.type === 'set') {
-                                                    console.log('wakeup alarm set--' + result);
-                                                    $('.received').html('wakeup alarm set--' + result);
-                                                } else {
-                                                    console.log('wakeup unhandled type (' + result.type + ')');
-                                                    $('.received').html('wakeup unhandled type (' + result.type + ')');
-                                                }
-                                            };
         </script>
     </body>
 
