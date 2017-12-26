@@ -404,6 +404,14 @@ module.exports = [
     "clobbers": [
       "window.Media"
     ]
+  },
+  {
+    "id": "cordova-plugin-wakeuptimer-jk.Wakeup",
+    "file": "plugins/cordova-plugin-wakeuptimer-jk/www/wakeup.js",
+    "pluginId": "cordova-plugin-wakeuptimer-jk",
+    "clobbers": [
+      "wakeuptimer"
+    ]
   }
 ];
 module.exports.metadata = 
@@ -419,7 +427,8 @@ module.exports.metadata =
   "cordova-plugin-dialogs": "1.2.1",
   "cordova-plugin-file": "6.0.0",
   "cordova-plugin-file-transfer": "1.5.1",
-  "cordova-plugin-media": "2.2.0"
+  "cordova-plugin-media": "2.2.0",
+  "cordova-plugin-wakeuptimer-jk": "1.1.2"
 };
 // BOTTOM OF METADATA
 });

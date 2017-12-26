@@ -73,11 +73,15 @@
                 $('.received').html('wakeup alarm detected--: error happend');
             };
 
-            $(document).on("deviceready", function () {
+            //$(document).on("deviceready", function () {
                 // all responses from the audio player are channeled through successCallback and errorCallback
+                window.addEventListener("batterystatus", onBatteryStatus, false);
 
+                function onBatteryStatus(status) {
+                    console.log("Level: " + status.level + " isPlugged: " + status.isPlugged);
+                }
 
-            });
+            //});
 
             // set wakeup timer
             window.wakeuptimer.wakeup(successCallback,
@@ -86,7 +90,7 @@
                             {
                                 alarms: [{
                                         type: 'onetime',
-                                        time: {hour: 11, minute: 25},
+                                        time: {hour: 12, minute: 06},
                                         extra: {message: 'json containing app-specific information to be posted when alarm triggers'},
                                         message: 'Alarm has expired!'
                                     }]
@@ -117,7 +121,7 @@
                                                 alarms: [{
                                                         type: 'onetime',
                                                         skipOnAwake: true,
-                                                        time: {hour: 11, minute: 28},
+                                                        time: {hour: 12, minute: 08},
                                                         extra: {message: 'json containing app-specific information to be posted when alarm triggers'},
                                                         message: 'Alarm has expired!'
                                                     }]
@@ -132,7 +136,7 @@
                                                         alarms: [{
                                                                 type: 'onetime',
                                                                 skipOnRunning: true,
-                                                                time: {hour: 11, minute: 30},
+                                                                time: {hour: 12, minute: 10},
                                                                 extra: {message: 'json containing app-specific information to be posted when alarm triggers'},
                                                                 message: 'Alarm has expired!'
                                                             }]
